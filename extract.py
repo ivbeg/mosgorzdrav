@@ -1,9 +1,10 @@
+#!/usr/bin/env python
 # -*- coding: utf8 -*-
 import sys, os, urllib, urllib2, urlparse, os.path
 from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
 
 BASE_URL = "http://www.mosgorzdrav.ru/mgz/komzdravsite.nsf/va_WebPages/sys_DigitsList_%d"
-NUM_LIST_PAGES = 231
+NUM_LIST_PAGES = 296
 
 def generate_list():
     f = open('pagelist.txt', 'w')
@@ -30,7 +31,8 @@ def extract_content():
     for l in f:
         l = l.strip()
         i += 1
-        if i == 1: continue        
+        if i == 1: continue 
+#        print i       
         thedate, text, url = l.split('|')
         print url
         id = url.rsplit('/', 1)[1]
